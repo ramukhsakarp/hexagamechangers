@@ -14,9 +14,10 @@ server.use(bodyParser.urlencoded({
 server.use(bodyParser.json());
 
 server.post('/get-movie-details', (req, res) => {
+	console.log(req);
     return res.json({
         speech: 'Hello World 123!' ,
-        displayText: 'test hit',
+        displayText: req.body.result.action,
         source: 'get-movie-details'
     });
 }, (error) => {
