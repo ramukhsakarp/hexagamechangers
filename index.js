@@ -15,8 +15,8 @@ server.use(bodyParser.json());
 
 server.post('/get-movie-details', (req, res) => {
     return res.json({
-        speech: 'Hello World!',
-        displayText: 'Hello World display text!',
+        speech: 'Hello World!' + req.get("result").get("action"),
+        displayText: 'Hello World display text!' + req.get("result").get("action"),
         source: 'get-movie-details'
     });
 }, (error) => {
